@@ -15,37 +15,45 @@
 <meta property="og:locale" content="id_ID">
 <meta name="twitter:card" content="summary">
 <style>
-:root{--red:#c90016;--red2:#a90012;--ink:#191919;--muted:#686868;--paper:#fff;--soft:#f7f7f8;--line:#e8e8eb;--green:#128c4a}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
-a{color:inherit;text-decoration:none}.wrap{width:min(1100px,92%);margin:auto}
-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
-.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+:root{--red:#d20a24;--red2:#a8071c;--ink:#17191f;--muted:#667085;--paper:#fff;--soft:#f6f7fb;--line:#e7e9ef;--green:#12834a;--shadow:0 18px 50px rgba(20,24,40,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}
+header{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(231,233,239,.85);position:sticky;top:0;z-index:10}
+.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
 .brand{display:flex;align-items:center;gap:12px;font-weight:800}.brand img{width:90px;max-height:46px;object-fit:contain}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:600;letter-spacing:.08em}
-nav{display:flex;gap:20px;align-items:center;font-size:14px;font-weight:700}nav a:hover{color:var(--red)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:13px 18px;font-weight:800;cursor:pointer;font-size:14px;transition:.2s}
-.btn-red{background:var(--red);color:white}.btn-red:hover{background:var(--red2);transform:translateY(-1px)}.btn-light{background:#fff;color:var(--red);border:1px solid #ffd4d9}.btn-green{background:var(--green);color:#fff}
-.hero{background:linear-gradient(125deg,#fff3f4 0%,#fff 62%);padding:64px 0 58px;border-bottom:1px solid #f2dfe1}
-.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:center}
+nav{display:flex;gap:8px;align-items:center;font-size:13px;font-weight:750;flex-wrap:wrap}nav a{padding:9px 12px;border-radius:10px;transition:background .2s,color .2s}nav a:hover{color:var(--red);background:#fff0f2}
+nav a:focus-visible,.btn:focus-visible{outline:3px solid #ff9eaa;outline-offset:3px}
+.site-page{display:none;min-height:60vh}.site-page.active{display:block}section[id]{scroll-margin-top:88px}nav a.active{color:var(--red);background:#fff0f2}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 19px;font-weight:800;cursor:pointer;font-size:14px;transition:transform .2s,box-shadow .2s,background .2s;box-shadow:0 5px 14px rgba(210,10,36,.12)}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(210,10,36,.18)}
+.btn-red{background:var(--red);color:white}.btn-red:hover{background:var(--red2);transform:translateY(-1px)}.btn-light{background:#fff;color:var(--red);border:1px solid #ffd4d9;box-shadow:none}.btn-green{background:var(--green);color:#fff}
+.hero{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 92% 15%,rgba(210,10,36,.10),transparent 32%),linear-gradient(135deg,#fff5f6 0%,#fff 55%,#f7f8fc 100%);padding:82px 0 76px;border-bottom:1px solid #f2dfe1}.hero:after{content:"";position:absolute;right:-130px;bottom:-220px;width:470px;height:470px;border:1px solid rgba(210,10,36,.10);border-radius:50%;box-shadow:0 0 0 38px rgba(210,10,36,.025),0 0 0 78px rgba(210,10,36,.02);z-index:-1}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:52px;align-items:center}
 .eyebrow{display:inline-block;background:#ffe2e5;color:var(--red);padding:6px 11px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}
-h1{font-size:clamp(34px,5vw,56px);line-height:1.08;letter-spacing:-1.6px;margin:18px 0 15px}h1 span{color:var(--red)}.lead{font-size:17px;color:#4b4b4b;max-width:620px;margin:0 0 24px}
+h1{font-size:clamp(38px,5.5vw,66px);line-height:1.03;letter-spacing:-2.4px;margin:22px 0 20px;font-weight:850}h1 span{color:var(--red)}.lead{font-size:17px;color:#555e6e;max-width:600px;margin:0 0 28px;line-height:1.8}
 .actions{display:flex;gap:10px;flex-wrap:wrap}.fine{font-size:12px;color:var(--muted);margin-top:14px}
-.promo-card{background:#fff;border:1px solid #f0d5d8;border-radius:18px;padding:25px;box-shadow:0 14px 35px #7c000010}
-.promo-card .big{font-size:30px;font-weight:900;color:var(--red);line-height:1.1;margin:8px 0}.promo-card p{margin:8px 0;color:#555}.promo-card ul{padding-left:19px;margin:17px 0 0}.promo-card li{margin:8px 0}
-section{padding:58px 0}.section-head{max-width:650px;margin-bottom:27px}.section-head h2{font-size:clamp(26px,3vw,36px);line-height:1.15;margin:0 0 10px;letter-spacing:-.7px}.section-head p{color:var(--muted);margin:0}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.info-card,.bike-card{border:1px solid var(--line);border-radius:15px;padding:22px;background:#fff}.symbol{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#fff0f1;color:var(--red);font-size:20px;font-weight:900;margin-bottom:14px}
+.promo-card{background:rgba(255,255,255,.88);border:1px solid rgba(240,213,216,.9);border-radius:24px;padding:30px;box-shadow:var(--shadow);backdrop-filter:blur(10px)}
+.promo-card .big{font-size:clamp(30px,3.5vw,42px);font-weight:900;color:var(--red);line-height:1.1;margin:14px 0}.promo-card p{margin:8px 0;color:#555}.promo-card ul{padding-left:19px;margin:17px 0 0}.promo-card li{margin:8px 0}
+section{padding:76px 0}.section-head{max-width:700px;margin-bottom:34px}.section-head h2{font-size:clamp(29px,3.4vw,42px);line-height:1.12;margin:0 0 13px;letter-spacing:-1.2px;font-weight:850}.section-head p{color:var(--muted);margin:0}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.info-card,.bike-card{border:1px solid var(--line);border-radius:20px;padding:26px;background:#fff;box-shadow:0 5px 18px rgba(20,24,40,.025);transition:transform .22s,box-shadow .22s,border-color .22s}.info-card:hover,.bike-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#f2c6cd}.symbol{width:40px;height:40px;display:grid;place-items:center;border-radius:12px;background:#fff0f1;color:var(--red);font-size:20px;font-weight:900;margin-bottom:14px}
 .info-card h3,.bike-card h3{margin:0 0 8px;font-size:18px}.info-card p,.bike-card p{color:var(--muted);font-size:14px;margin:0}
-.catalog{background:var(--soft)}.catalog-picker{max-width:720px;margin:0 auto}.catalog-picker label{font-size:14px}.catalog-picker select{margin:6px 0 18px}.catalog-detail{border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px;background:#fafafa;min-height:125px}.catalog-detail h3{margin:0 0 8px;font-size:21px}.catalog-detail p{color:var(--muted);margin:0}.catalog-detail .tag{display:inline-block;font-size:11px;color:var(--red);background:#fff0f1;border-radius:99px;padding:4px 8px;font-weight:800;margin-bottom:10px}
+.catalog{background:linear-gradient(180deg,#f6f7fb 0%,#fff 100%);border-top:1px solid #eff0f4;border-bottom:1px solid #eff0f4}.catalog-picker{max-width:820px;margin:0 auto;background:#fff;padding:clamp(18px,4vw,34px);border:1px solid var(--line);border-radius:24px;box-shadow:var(--shadow)}.catalog-picker label{font-size:14px}.catalog-picker select{margin:6px 0 14px}
+.catalog-help{font-size:13px;color:var(--muted);margin:0 0 8px}.catalog-search{margin:6px 0 8px}.search-results{display:none;margin:0 0 18px;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 12px 30px #17203312}.search-results.is-visible{display:block}.search-results-head{padding:10px 14px;background:#f7f8fb;color:var(--muted);font-size:12px;font-weight:700}.search-result{display:flex;width:100%;gap:12px;align-items:center;justify-content:space-between;text-align:left;padding:13px 15px;background:#fff;border:0;border-top:1px solid #eff0f4;cursor:pointer;color:var(--ink);font:inherit}.search-result:hover,.search-result:focus{background:#fff4f5;outline:none}.search-result-name{font-weight:800;font-size:14px}.search-result-price{font-weight:800;color:var(--red);font-size:13px;white-space:nowrap}.search-no-result{padding:16px;color:var(--muted);font-size:14px}
+.catalog-detail{border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:18px;background:#fff;min-height:125px;box-shadow:0 5px 18px #00000005}
+.catalog-detail h3{margin:4px 0 12px;font-size:23px}.price-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0}
+.price-item{background:#f8f8f9;border:1px solid var(--line);border-radius:10px;padding:14px}.price-item span{display:block;color:var(--muted);font-size:12px;margin-bottom:4px}.price-item strong{font-size:18px}
+.catalog-detail table th,.catalog-detail table td{padding:10px;border-bottom:1px solid var(--line);text-align:left}.catalog-detail table th{background:#f7f7f8}
+.catalog-step{display:flex;gap:10px;align-items:flex-start;margin:0 0 16px;color:var(--muted);font-size:13px}.catalog-step b{display:grid;place-items:center;flex:0 0 26px;height:26px;background:#ffe8ea;color:var(--red);border-radius:50%}.catalog-detail{border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:18px;background:#fafafa;min-height:125px}.catalog-detail h3{margin:0 0 8px;font-size:21px}.catalog-detail p{color:var(--muted);margin:0}.catalog-detail .tag{display:inline-block;font-size:11px;color:var(--red);background:#fff0f1;border-radius:99px;padding:4px 8px;font-weight:800;margin-bottom:10px}
 .notice{font-size:12px;color:var(--muted);margin-top:18px}
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-.panel{border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff}
-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #d9d9df;border-radius:9px;padding:12px 11px;font:inherit;font-size:14px;background:white;color:var(--ink)}input:focus,select:focus,textarea:focus{outline:2px solid #ffd2d7;border-color:var(--red)}.field.full{grid-column:1/-1}form button{grid-column:1/-1}
+.panel{border:1px solid var(--line);border-radius:22px;padding:28px;background:#fff;box-shadow:0 8px 30px rgba(20,24,40,.045)}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}label{display:block;font-size:13px;font-weight:800;margin-bottom:6px}input,select,textarea{width:100%;border:1px solid #d9d9df;border-radius:12px;padding:14px 13px;font:inherit;font-size:14px;background:white;color:var(--ink);transition:border-color .2s,box-shadow .2s}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--red);box-shadow:0 0 0 4px rgba(210,10,36,.09)}.field.full{grid-column:1/-1}form button{grid-column:1/-1}
 .small-note{font-size:12px;color:var(--muted);margin:12px 0 0}
 .steps{list-style:none;padding:0;margin:0}.steps li{display:flex;gap:13px;margin:0 0 19px}.num{flex:0 0 30px;height:30px;border-radius:50%;background:#ffe8ea;color:var(--red);display:grid;place-items:center;font-weight:900}.steps strong{display:block;margin-bottom:3px}.steps span{color:var(--muted);font-size:14px}
-.contact{background:#171717;color:#fff}.contact .section-head p{color:#d0d0d0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-box{padding:24px;border:1px solid #393939;border-radius:15px;background:#202020}.contact-box p{color:#d2d2d2;margin:7px 0}.contact-box h3{margin-top:0}.contact a.underline{text-decoration:underline;color:#fff}.heart{font-size:13px;letter-spacing:.12em;font-weight:900;color:#f4f4f4;margin-top:22px}.heart b{color:#ff2438}
-footer{padding:22px 0;background:#111;color:#aaa;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.float-wa{position:fixed;right:18px;bottom:18px;z-index:20;box-shadow:0 8px 24px #0002;border-radius:999px}
-@media(max-width:780px){nav{display:none}.hero{padding:42px 0}.hero-grid,.two-col,.contact-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}section{padding:44px 0}.promo-card{max-width:520px}.brand img{width:76px}}
-@media(max-width:480px){h1{letter-spacing:-1px}.btn{width:100%}.actions{display:grid}.panel{padding:18px}form{grid-template-columns:1fr}.field.full{grid-column:auto}.nav{min-height:64px}}
+.contact{background:radial-gradient(ellipse at 0% 0%,#352027 0%,transparent 38%),#14161c;color:#fff}.contact .section-head p{color:#d0d0d0}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.contact-box{padding:28px;border:1px solid #383b44;border-radius:20px;background:rgba(255,255,255,.045)}.contact-box p{color:#d2d2d2;margin:7px 0}.contact-box h3{margin-top:0}.contact a.underline{text-decoration:underline;color:#fff}.heart{font-size:13px;letter-spacing:.12em;font-weight:900;color:#f4f4f4;margin-top:22px}.heart b{color:#ff2438}
+footer{padding:26px 0;background:#0d0f14;color:#a8abb5;font-size:12px}.footer-row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.float-wa{position:fixed;right:22px;bottom:22px;z-index:20;display:inline-flex;width:auto;min-width:0;max-width:max-content;padding:11px 16px;box-shadow:0 8px 22px rgba(18,131,74,.24);border-radius:999px;font-size:14px;line-height:1.2;white-space:nowrap}
+@media(max-width:780px){.float-wa{right:16px;bottom:16px;padding:10px 15px;font-size:13px}.hero{padding:52px 0 46px}.hero-grid,.two-col,.contact-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}section{padding:54px 0}.promo-card{max-width:520px}.brand img{width:76px}.nav{align-items:flex-start;flex-direction:column;padding:12px 0;gap:8px}nav{width:100%;gap:8px;overflow-x:auto;flex-wrap:nowrap;padding:4px 0 8px;font-size:13px}nav a{white-space:nowrap;background:#f7f7f8;padding:7px 10px;border-radius:8px}.float-wa{right:12px;bottom:12px}}
+@media(max-width:480px){.float-wa{width:auto!important;right:14px;bottom:14px;padding:10px 14px;font-size:13px}h1{letter-spacing:-1.5px}.btn{width:100%}.actions{display:grid}.panel{padding:18px}form{grid-template-columns:1fr}.field.full{grid-column:auto}.nav{min-height:64px}.price-summary{grid-template-columns:1fr}.catalog-detail{padding:16px}.float-wa{width:auto!important;font-size:13px;padding:10px 14px}}
 </style>
 </head>
 <body>
@@ -56,29 +64,29 @@ footer{padding:22px 0;background:#111;color:#aaa;font-size:12px}.footer-row{disp
       <span>HONDA SRAGEN<small>NSS NUSANTARA SAKTI</small></span>
     </a>
     <nav aria-label="Navigasi utama">
-      <a href="#profil">Profil</a><a href="#katalog">Katalog</a><a href="#simulasi">Simulasi</a><a href="#lokasi">Lokasi</a>
+      <a href="#beranda" data-page="beranda" class="nav-page active">Beranda</a><a href="#katalog" data-page="katalog" class="nav-page">Katalog</a><a href="#simulasi" data-page="simulasi" class="nav-page">Simulasi</a><a href="#lokasi" data-page="kontak" class="nav-page">Kontak</a>
     </nav>
   </div>
 </header>
 
 <main>
+<div class="site-page active" id="page-beranda">
 <section class="hero" id="beranda">
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Dealer Motor Honda • Sragen</span>
       <h1>Motor Honda impian,<br><span>lebih mudah dimiliki.</span></h1>
-      <p class="lead">DP ringan, konsultasi dari rumah, dan bantuan pengiriman unit sampai tujuan. Cukup hubungi Nanda untuk cek promo, simulasi, serta ketersediaan motor.</p>
+      <p class="lead">DP ringan, konsultasi dari rumah, dan bantuan pengiriman unit sampai tujuan. Cukup hubungi kami untuk cek promo, simulasi, serta ketersediaan motor.</p>
       <div class="actions">
         <a class="btn btn-red" href="#simulasi">Cek Simulasi Kredit →</a>
         <a class="btn btn-light" href="#katalog">Lihat Katalog Motor</a>
       </div>
-      <p class="fine">Pengajuan dan pengiriman mengikuti ketersediaan unit, wilayah layanan, serta hasil verifikasi pembiayaan.</p>
     </div>
     <aside class="promo-card">
       <span class="eyebrow">Promo & layanan</span>
       <div class="big">DP MURAH</div>
       <h3>Daftar hari ini, proses secepatnya.</h3>
-      <p>Jangan tunda motor yang Anda butuhkan. Tanyakan penawaran terbaru langsung kepada Nanda.</p>
+      <p>Jangan tunda motor yang Anda butuhkan. Tanyakan penawaran terbaru langsung kepada tim sales.</p>
       <ul>
         <li>Pengajuan dibantu melalui WhatsApp</li>
         <li>Gratis antar sesuai area dan ketentuan promo</li>
@@ -93,46 +101,106 @@ footer{padding:22px 0;background:#111;color:#aaa;font-size:12px}.footer-row{disp
     <div class="section-head"><h2>Tentang NSS Nusantara Sakti</h2><p>Nusantara Sakti Group merupakan grup usaha yang bergerak di berbagai sektor, termasuk penjualan sepeda motor Honda, layanan purna jual, pembiayaan, dan logistik. Pelayanan berorientasi pada 3T: Tercepat, Termudah, dan Terpercaya.</p></div>
     <div class="grid3">
       <article class="info-card"><div class="symbol">✓</div><h3>Praktis dari rumah</h3><p>Konsultasi model, estimasi DP, dan simulasi cicilan bisa dimulai melalui WhatsApp tanpa harus datang lebih dulu ke dealer.</p></article>
-      <article class="info-card"><div class="symbol">↗</div><h3>Dibantu sampai jelas</h3><p>Nanda membantu menjelaskan pilihan unit, dokumen yang diperlukan, biaya, dan tahapan pengajuan sebelum Anda mengambil keputusan.</p></article>
+      <article class="info-card"><div class="symbol">↗</div><h3>Dibantu sampai jelas</h3><p>Tim sales membantu menjelaskan pilihan unit, dokumen yang diperlukan, biaya, dan tahapan pengajuan sebelum Anda mengambil keputusan.</p></article>
       <article class="info-card"><div class="symbol">⌂</div><h3>Pengiriman terkoordinasi</h3><p>Pengantaran dapat dijadwalkan setelah proses pembelian selesai, sesuai ketersediaan unit, alamat tujuan, dan ketentuan yang disepakati.</p></article>
     </div>
   </div>
 </section>
+</div>
 
+<div class="site-page" id="page-katalog">
 <section class="catalog" id="katalog">
   <div class="wrap">
-    <div class="section-head"><h2>Katalog Motor Honda</h2><p>Pilih motor sesuai kebutuhan harian, gaya, atau perjalanan. Katalog ini sengaja dibuat tanpa gambar agar ringan dan nyaman dibuka di HP.</p></div>
+    <div class="section-head"><h2>Katalog Motor Honda</h2><p>Temukan motor yang sesuai, lalu lihat harga OTR, contoh DP, dan angsuran. Jika belum yakin dengan varian, pilih model yang paling mendekati dan tanyakan detailnya kepada tim sales.</p></div>
     <div class="catalog-picker panel">
+      <div class="catalog-step"><b>1</b><span><strong>Cari motor</strong><br>Ketik nama motor atau pilih dari daftar model dan varian.</span></div>
+      <label for="catalogSearch">Cari nama motor</label>
+      <input class="catalog-search" id="catalogSearch" type="search" placeholder="Contoh: BeAT, Scoopy, Vario, PCX" autocomplete="off" aria-controls="catalogSearchResults" aria-autocomplete="list">
+      <div id="catalogSearchResults" class="search-results" role="listbox" aria-label="Hasil pencarian motor"></div>
       <label for="catalogSelect">Pilih kategori / model motor Honda</label>
       <select id="catalogSelect">
-        <option value="">-- Pilih motor untuk melihat deskripsi --</option>
-        <option value="beat">Honda BeAT</option>
-        <option value="beatstreet">Honda BeAT Street</option>
-        <option value="scoopy">Honda Scoopy</option>
-        <option value="genio">Honda Genio</option>
-        <option value="vario125">Honda Vario 125</option>
-        <option value="vario160">Honda Vario 160</option>
-        <option value="pcx160">Honda PCX 160</option>
-        <option value="adv160">Honda ADV 160</option>
-        <option value="stylo160">Honda Stylo 160</option>
-        <option value="cbr">Honda CBR Series</option>
-        <option value="suprax">Honda Supra X 125</option>
-        <option value="lainnya">Model Honda lainnya</option>
-      </select>
+         <option value="">-- Pilih model untuk melihat harga --</option>
+         <option value="m1">REVO FIT GB4 — Rp19.200.000</option>
+         <option value="m2">REVO X GD4 — Rp20.910.000</option>
+         <option value="m3">SUPRA X 125 SW GE5 — Rp22.510.000</option>
+         <option value="m4">SUPRA X 125 CW GF5 — Rp23.720.000</option>
+         <option value="m5">New Supra GTR150 Sporty HJ9 — Rp28.520.000</option>
+         <option value="m6">New Supra GTR150 Exclusive HJK — Rp28.770.000</option>
+         <option value="m7">BeAT Sporty CBS MJ2A — Rp21.270.000</option>
+         <option value="m8">BeAT Sporty CBS ISS Deluxe MK2A — Rp22.070.000</option>
+         <option value="m9">BeAT Sporty CBS ISS Deluxe Smart Key ML2A — Rp22.670.000</option>
+         <option value="m10">BeAT Street MM2 — Rp21.430.000</option>
+         <option value="m11">BeAT Street MM2A — Rp22.120.000</option>
+         <option value="m12">Genio CBS LY2A — Rp22.400.000</option>
+         <option value="m13">Genio CBS LYPA — Rp22.660.000</option>
+         <option value="m14">Genio CBS ISS LZ2A — Rp22.870.000</option>
+         <option value="m15">Scoopy Fashion MRBE — Rp25.370.000</option>
+         <option value="m16">Scoopy Prestige / Stylish MS1E MSBE — Rp26.250.000</option>
+         <option value="m17">VARIO 125 CBS ND0B — Rp26.530.000</option>
+         <option value="m18">VARIO 125 ISS NE0B — Rp28.430.000</option>
+         <option value="m19">VARIO 125 STREET NF0C — Rp28.950.000</option>
+         <option value="m20">VARIO 160 CBS LV1B — Rp29.990.000</option>
+         <option value="m21">VARIO 160 CBS LVEB — Rp30.240.000</option>
+         <option value="m22">VARIO 160 ABS LW1B — Rp33.110.000</option>
+         <option value="m23">VARIO EVO 160 CBS MYAB — Rp30.270.000</option>
+         <option value="m24">VARIO EVO 160 CBS NITRO MY0B — Rp30.520.000</option>
+         <option value="m25">VARIO EVO 160 ABS MZ0B — Rp33.360.000</option>
+         <option value="m26">STYLO 160 CBS MF1D — Rp31.520.000</option>
+         <option value="m27">STYLO 160 ABS MG1D — Rp34.580.000</option>
+         <option value="m28">STYLO 160 ABS SPC MGAD — Rp36.180.000</option>
+         <option value="m29">PCX 160 CBS MT1A — Rp36.640.000</option>
+         <option value="m30">PCX 160 ABS MV1A — Rp40.380.000</option>
+         <option value="m31">PCX 160 ABS Roadsync MW1A — Rp43.540.000</option>
+         <option value="m32">ADV 160 CBS NA0 — Rp38.830.000</option>
+         <option value="m33">ADV 160 ABS NB0 — Rp41.950.000</option>
+         <option value="m34">ADV 160 ABS Roadsync NC0 — Rp43.720.000</option>
+         <option value="m35">CB150 Verza SW KF0 — Rp25.920.000</option>
+         <option value="m36">CB150 Verza CW KG0 — Rp26.580.000</option>
+         <option value="m37">SONIC 150R HD7 — Rp29.690.000</option>
+         <option value="m38">SONIC 150R HRR HDN HDP — Rp30.100.000</option>
+         <option value="m39">CB150R Streetfire JR0 — Rp36.170.000</option>
+         <option value="m40">CB150R Streetfire SE JS0 — Rp37.180.000</option>
+         <option value="m41">CB 150 X Std JX0 — Rp36.050.000</option>
+         <option value="m42">CB 150 X SE JXA — Rp36.560.000</option>
+         <option value="m43">CRF150L ES7A ESKA ESLA — Rp40.900.000</option>
+         <option value="m44">CBR 150 STD JMM / JM1 — Rp40.510.000</option>
+         <option value="m45">CBR 150 STD JM2 JML / JMG JMH — Rp41.220.000</option>
+         <option value="m46">CBR 150 ABS KEA — Rp44.780.000</option>
+         <option value="m47">CBR 150 ABS KE0 — Rp45.490.000</option>
+         <option value="m48">CBR250RR STD KA0 — Rp76.870.000</option>
+         <option value="m49">CBR250RR STD KAA — Rp81.240.000</option>
+         <option value="m50">CBR250RR ABS KB0 — Rp88.760.000</option>
+         <option value="m51">CBR250RR ABSQS KC0 — Rp92.810.000</option>
+         <option value="m52">CBR250RR ABSQS KCA KCB — Rp93.410.000</option>
+         <option value="m53">Supercub C125 AM1 AMB — Rp82.430.000</option>
+         <option value="m54">CRF250L JTB — Rp96.530.000</option>
+         <option value="m55">CT125AM AZ0 — Rp84.690.000</option>
+         <option value="m56">DAX ST125 DX JZ1 — Rp85.350.000</option>
+         <option value="m57">MONKEY Z125 JY1 — Rp90.000.000</option>
+         <option value="m58">FORZA FB2 — Rp101.260.000</option>
+         <option value="m59">CRF250 RALLY JT2 — Rp101.780.000</option>
+         <option value="m60">EM1 :e ME0A CHARGER — Rp46.121.000</option>
+         <option value="m61">EM1 :e PLUS MH0A CHARGER — Rp46.621.000</option>
+         <option value="m62">ICON e: MX0 — Rp28.147.000</option>
+         <option value="m63">CUV e: MN0 — Rp54.693.000</option>
+         <option value="m64">CUV e: Roadsync Duo MP0 — Rp59.893.000</option>
+       </select>
       <div id="catalogDetail" class="catalog-detail" aria-live="polite">
-        <h3>Katalog motor Honda</h3>
-        <p>Pilih model di menu atas untuk membaca deskripsi singkat dan lanjut ke simulasi.</p>
+        <h3>Mulai dari sini</h3>
+        <p>Gunakan kolom pencarian atau daftar pilihan di atas. Detail harga dan contoh angsuran akan tampil di bagian ini.</p>
       </div>
+      <div class="catalog-step"><b>3</b><span><strong>Lanjutkan konsultasi</strong><br>Motor pilihan akan otomatis dimasukkan ke formulir simulasi.</span></div>
       <a class="btn btn-red" id="catalogSim" href="#simulasi">Pilih motor untuk simulasi</a>
     </div>
-    <p class="notice">Nama model merupakan referensi katalog. Varian, warna, harga OTR, DP, angsuran, dan stok dapat berubah. Minta penawaran terbaru untuk wilayah Sragen sebelum mengajukan.</p>
   </div>
 </section>
+</div>
 
+<div class="site-page" id="page-simulasi">
 <section id="simulasi">
   <div class="wrap two-col">
     <div>
-      <div class="section-head"><h2>Formulir Simulasi</h2><p>Isi data singkat berikut. Tombol kirim akan membuka WhatsApp dengan pesan yang sudah disiapkan untuk Nanda.</p></div>
+      <div class="section-head"><h2>Formulir Simulasi</h2></div>
       <div class="panel">
         <form id="simForm">
           <div class="field"><label for="nama">Nama</label><input id="nama" name="nama" placeholder="Nama Anda" required></div>
@@ -151,57 +219,205 @@ footer{padding:22px 0;background:#111;color:#aaa;font-size:12px}.footer-row{disp
       <div class="section-head"><h2>Alur pembelian mudah</h2><p>Mulai dari konsultasi, tanpa perlu datang ke dealer pada tahap awal.</p></div>
       <ol class="steps">
         <li><div class="num">1</div><div><strong>Pilih motor & isi formulir</strong><span>Tentukan model dan kebutuhan Anda, lalu kirim detail melalui WhatsApp.</span></div></li>
-        <li><div class="num">2</div><div><strong>Cek promo dan simulasi</strong><span>Nanda membantu menginformasikan estimasi DP, angsuran, dokumen, dan biaya yang berlaku.</span></div></li>
+        <li><div class="num">2</div><div><strong>Cek promo dan simulasi</strong><span>Tim sales membantu menginformasikan estimasi DP, angsuran, dokumen, dan biaya yang berlaku.</span></div></li>
         <li><div class="num">3</div><div><strong>Verifikasi pengajuan</strong><span>Proses dilakukan sesuai syarat dan penilaian pihak pembiayaan. Persetujuan tidak dapat dijamin sebelum verifikasi.</span></div></li>
         <li><div class="num">4</div><div><strong>Atur pengiriman atau cek unit</strong><span>Jika transaksi telah memenuhi ketentuan, konfirmasikan jadwal serah terima atau janji temu di dealer.</span></div></li>
       </ol>
-      <a class="btn btn-red" style="width:100%" href="https://wa.me/6285119477941?text=Halo%20Nanda%2C%20saya%20ingin%20membuat%20janji%20temu%20untuk%20cek%20unit%20motor%20Honda%20di%20dealer%20NSS%20Sragen." target="_blank" rel="noopener">Buat Janji Temu Cek Unit</a>
+      <a class="btn btn-red" style="width:100%" href="https://wa.me/6285119477941?text=Halo%2C%20saya%20ingin%20membuat%20janji%20temu%20untuk%20cek%20unit%20motor%20Honda%20di%20dealer%20NSS%20Sragen." target="_blank" rel="noopener">Buat Janji Temu Cek Unit</a>
     </div>
   </div>
 </section>
+</div>
 
+<div class="site-page" id="page-kontak">
 <section class="contact" id="lokasi">
   <div class="wrap">
     <div class="section-head"><h2>Hubungi NSS Honda Sragen</h2><p>Tanyakan promo terbaru, ketersediaan unit, simulasi kredit, atau jadwal kunjungan dealer.</p></div>
     <div class="contact-grid">
-      <div class="contact-box"><h3>Alamat Dealer</h3><p>Jl. Sukowati Dok No. 468, Sragen, Jawa Tengah 57214</p><p><strong>WhatsApp Official / Sales:</strong><br>Nanda — 0851-1947-7941</p><a class="btn btn-green" href="https://wa.me/6285119477941?text=Halo%20Nanda%2C%20saya%20ingin%20informasi%20motor%20Honda%20di%20NSS%20Sragen." target="_blank" rel="noopener">Chat Nanda Sekarang</a></div>
-      <div class="contact-box"><h3>Janji temu cek unit</h3><p>Ingin melihat motor langsung? Hubungi Nanda untuk mengatur waktu kunjungan dan memastikan unit yang ingin dicek tersedia.</p><p>Untuk layanan antar, konfirmasikan terlebih dahulu alamat tujuan, jadwal, dan apakah biaya pengiriman ditanggung oleh promo.</p><a class="btn btn-light" href="https://wa.me/6285119477941?text=Halo%20Nanda%2C%20saya%20ingin%20atur%20janji%20temu%20cek%20unit%20di%20dealer%20NSS%20Sragen." target="_blank" rel="noopener">Atur Jadwal Kunjungan</a><div class="heart">HONDA <b>♥</b> ONE HEART</div></div>
+      <div class="contact-box"><h3>Alamat Dealer</h3><p>Jl. Sukowati Dok No. 468, Sragen, Jawa Tengah 57214</p><p><strong>WhatsApp Official / Sales:</strong><br>Nanda — 0851-1947-7941</p><a class="btn btn-green" href="https://wa.me/6285119477941?text=Halo%2C%20saya%20ingin%20informasi%20motor%20Honda%20di%20NSS%20Sragen." target="_blank" rel="noopener">Chat Sekarang</a></div>
+      <div class="contact-box"><h3>Janji temu cek unit</h3><p>Ingin melihat motor langsung? Hubungi kami untuk mengatur waktu kunjungan dan memastikan unit yang ingin dicek tersedia.</p><p>Untuk layanan antar, konfirmasikan terlebih dahulu alamat tujuan, jadwal, dan apakah biaya pengiriman ditanggung oleh promo.</p><a class="btn btn-light" href="https://wa.me/6285119477941?text=Halo%2C%20saya%20ingin%20atur%20janji%20temu%20cek%20unit%20di%20dealer%20NSS%20Sragen." target="_blank" rel="noopener">Atur Jadwal Kunjungan</a><div class="heart">HONDA <b>♥</b> ONE HEART</div></div>
     </div>
   </div>
 </section>
+</div>
 </main>
 <footer><div class="wrap footer-row"><span>© <span id="year"></span> Honda Sragen • NSS Nusantara Sakti</span><span>Informasi promo dan pembiayaan mengikuti syarat serta ketentuan yang berlaku.</span></div></footer>
-<a class="btn btn-green float-wa" href="https://wa.me/6285119477941?text=Halo%20Nanda%2C%20saya%20ingin%20konsultasi%20motor%20Honda." target="_blank" rel="noopener" aria-label="Chat WhatsApp">WhatsApp Nanda</a>
+<a class="btn btn-green float-wa" href="https://wa.me/6285119477941?text=Halo%2C%20saya%20ingin%20konsultasi%20motor%20Honda." target="_blank" rel="noopener" aria-label="Chat WhatsApp">WhatsApp</a>
+<script>
+(function(){
+  function pageForHash(hash){
+    if(hash==='#katalog') return 'katalog';
+    if(hash==='#simulasi') return 'simulasi';
+    if(hash==='#lokasi' || hash==='#kontak') return 'kontak';
+    return 'beranda';
+  }
+  window.showSitePage=function(name, updateHash){
+    var valid=['beranda','katalog','simulasi','kontak'];
+    if(valid.indexOf(name)<0) name='beranda';
+    document.querySelectorAll('.site-page').forEach(function(el){el.classList.toggle('active',el.id==='page-'+name);});
+    document.querySelectorAll('nav .nav-page').forEach(function(el){el.classList.toggle('active',el.dataset.page===name);});
+    if(updateHash){var hash={beranda:'#beranda',katalog:'#katalog',simulasi:'#simulasi',kontak:'#lokasi'}[name];history.replaceState(null,'',hash);}
+    window.scrollTo({top:0,behavior:'smooth'});
+  };
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href^="#"]'); if(!a) return;
+    var hash=a.getAttribute('href');
+    var target=document.querySelector(hash); if(!target) return;
+    e.preventDefault();
+    var page= a.dataset.page || pageForHash(hash);
+    showSitePage(page,true);
+  });
+  window.addEventListener('popstate',function(){showSitePage(pageForHash(location.hash),false);});
+  showSitePage(pageForHash(location.hash),false);
+})();
+</script>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 var catalogData = {
-  beat:['Honda BeAT','IRIT & PRAKTIS','Matic ringan untuk mobilitas harian, bekerja, kuliah, dan aktivitas di dalam kota.'],
-  beatstreet:['Honda BeAT Street','GAYA URBAN','Tampilan street-style dengan karakter simpel dan lincah untuk penggunaan sehari-hari.'],
-  scoopy:['Honda Scoopy','STYLISH','Desain ikonik dan pilihan gaya yang cocok untuk pengendara yang ingin tampil beda.'],
-  genio:['Honda Genio','MODERN','Matic bergaya modern dengan bentuk ramping untuk menemani rutinitas sehari-hari.'],
-  vario125:['Honda Vario 125','SERBAGUNA','Pilihan matic dengan tampilan sporty untuk kebutuhan mobilitas harian.'],
-  vario160:['Honda Vario 160','PERFORMA','Gaya lebih agresif dan performa untuk kebutuhan mobilitas yang dinamis.'],
-  pcx160:['Honda PCX 160','PREMIUM','Matic premium dengan desain elegan untuk perjalanan harian maupun jarak menengah.'],
-  adv160:['Honda ADV 160','ADVENTURE','Gaya adventure untuk pengendara yang menyukai tampilan tangguh dan serbaguna.'],
-  stylo160:['Honda Stylo 160','RETRO MODERN','Perpaduan nuansa klasik dan modern dengan tampilan yang menonjol.'],
-  cbr:['Honda CBR Series','SPORTY','Pilihan motor berkarakter sport untuk pengendara yang menyukai desain agresif.'],
-  suprax:['Honda Supra X 125','FUNGSI HARIAN','Motor bebek yang praktis untuk kebutuhan harian dan perjalanan rutin.'],
-  lainnya:['Model Honda lainnya','PILIHAN LAIN','Tanyakan tipe, warna, tahun produksi, dan unit yang tersedia di dealer Sragen.']
+  "m1": {"model": "REVO FIT GB4", "otr": 19200000, "dp": 1000000, "angsuran": {"11": 2049000, "17": 1431000, "23": 1139000, "29": 971000, "35": 862000, "47": 733000}, "tag": "DAFTAR HARGA"},
+  "m2": {"model": "REVO X GD4", "otr": 20910000, "dp": 1100000, "angsuran": {"11": 2220000, "17": 1550000, "23": 1234000, "29": 1052000, "35": 934000, "47": 795000}, "tag": "DAFTAR HARGA"},
+  "m3": {"model": "SUPRA X 125 SW GE5", "otr": 22510000, "dp": 1300000, "angsuran": {"11": 2369000, "17": 1654000, "23": 1317000, "29": 1122000, "35": 997000, "47": 848000}, "tag": "DAFTAR HARGA"},
+  "m4": {"model": "SUPRA X 125 CW GF5", "otr": 23720000, "dp": 1400000, "angsuran": {"11": 2488000, "17": 1737000, "23": 1383000, "29": 1178000, "35": 1047000, "47": 890000}, "tag": "DAFTAR HARGA"},
+  "m5": {"model": "New Supra GTR150 Sporty HJ9", "otr": 28520000, "dp": 1700000, "angsuran": {"11": 2945000, "17": 2057000, "23": 1637000, "29": 1394000, "35": 1239000, "47": 1054000}, "tag": "DAFTAR HARGA"},
+  "m6": {"model": "New Supra GTR150 Exclusive HJK", "otr": 28770000, "dp": 1700000, "angsuran": {"11": 2972000, "17": 2075000, "23": 1652000, "29": 1407000, "35": 1250000, "47": 1063000}, "tag": "DAFTAR HARGA"},
+  "m7": {"model": "BeAT Sporty CBS MJ2A", "otr": 21270000, "dp": 1200000, "angsuran": {"11": 2256000, "17": 1578000, "23": 1258000, "29": 1074000, "35": 956000, "47": 815000}, "tag": "DAFTAR HARGA"},
+  "m8": {"model": "BeAT Sporty CBS ISS Deluxe MK2A", "otr": 22070000, "dp": 1300000, "angsuran": {"11": 2332000, "17": 1631000, "23": 1300000, "29": 1109000, "35": 987000, "47": 842000}, "tag": "DAFTAR HARGA"},
+  "m9": {"model": "BeAT Sporty CBS ISS Deluxe Smart Key ML2A", "otr": 22670000, "dp": 1300000, "angsuran": {"11": 2395000, "17": 1676000, "23": 1336000, "29": 1140000, "35": 1014000, "47": 865000}, "tag": "DAFTAR HARGA"},
+  "m10": {"model": "BeAT Street MM2", "otr": 21430000, "dp": 1200000, "angsuran": {"11": 2274000, "17": 1590000, "23": 1268000, "29": 1082000, "35": 963000, "47": 821000}, "tag": "DAFTAR HARGA"},
+  "m11": {"model": "BeAT Street MM2A", "otr": 22120000, "dp": 1300000, "angsuran": {"11": 2337000, "17": 1635000, "23": 1303000, "29": 1112000, "35": 989000, "47": 844000}, "tag": "DAFTAR HARGA"},
+  "m12": {"model": "Genio CBS LY2A", "otr": 22400000, "dp": 800000, "angsuran": {"11": 2367000, "17": 1655000, "23": 1320000, "29": 1126000, "35": 1002000, "47": 854000}, "tag": "DAFTAR HARGA"},
+  "m13": {"model": "Genio CBS LYPA", "otr": 22660000, "dp": 800000, "angsuran": {"11": 2394000, "17": 1675000, "23": 1335000, "29": 1139000, "35": 1014000, "47": 864000}, "tag": "DAFTAR HARGA"},
+  "m14": {"model": "Genio CBS ISS LZ2A", "otr": 22870000, "dp": 800000, "angsuran": {"11": 2417000, "17": 1690000, "23": 1348000, "29": 1150000, "35": 1023000, "47": 872000}, "tag": "DAFTAR HARGA"},
+  "m15": {"model": "Scoopy Fashion MRBE", "otr": 25370000, "dp": 1400000, "angsuran": {"11": 2652000, "17": 1855000, "23": 1479000, "29": 1262000, "35": 1123000, "47": 957000}, "tag": "DAFTAR HARGA"},
+  "m16": {"model": "Scoopy Prestige / Stylish MS1E MSBE", "otr": 26250000, "dp": 1700000, "angsuran": {"11": 2735000, "17": 1913000, "23": 1525000, "29": 1302000, "35": 1158000, "47": 987000}, "tag": "DAFTAR HARGA"},
+  "m17": {"model": "VARIO 125 CBS ND0B", "otr": 26530000, "dp": 1700000, "angsuran": {"11": 2785000, "17": 1954000, "23": 1562000, "29": 1336000, "35": 1190000, "47": 1018000}, "tag": "DAFTAR HARGA"},
+  "m18": {"model": "VARIO 125 ISS NE0B", "otr": 28430000, "dp": 1900000, "angsuran": {"11": 2967000, "17": 2081000, "23": 1663000, "29": 1422000, "35": 1267000, "47": 1083000}, "tag": "DAFTAR HARGA"},
+  "m19": {"model": "VARIO 125 STREET NF0C", "otr": 28950000, "dp": 900000, "angsuran": {"11": 3011000, "17": 2109000, "23": 1682000, "29": 1436000, "35": 1278000, "47": 1090000}, "tag": "DAFTAR HARGA"},
+  "m20": {"model": "VARIO 160 CBS LV1B", "otr": 29990000, "dp": 1000000, "angsuran": {"11": 3081000, "17": 2151000, "23": 1712000, "29": 1459000, "35": 1296000, "47": 1102000}, "tag": "DAFTAR HARGA"},
+  "m21": {"model": "VARIO 160 CBS LVEB", "otr": 30240000, "dp": 1100000, "angsuran": {"11": 3097000, "17": 2162000, "23": 1721000, "29": 1466000, "35": 1302000, "47": 1108000}, "tag": "DAFTAR HARGA"},
+  "m22": {"model": "VARIO 160 ABS LW1B", "otr": 33110000, "dp": 1400000, "angsuran": {"11": 3370000, "17": 2353000, "23": 1873000, "29": 1596000, "35": 1417000, "47": 1205000}, "tag": "DAFTAR HARGA"},
+  "m23": {"model": "VARIO EVO 160 CBS MYAB", "otr": 30270000, "dp": 1900000, "angsuran": {"11": 3130000, "17": 2192000, "23": 1749000, "29": 1494000, "35": 1330000, "47": 1136000}, "tag": "DAFTAR HARGA"},
+  "m24": {"model": "VARIO EVO 160 CBS NITRO MY0B", "otr": 30520000, "dp": 1900000, "angsuran": {"11": 3158000, "17": 2211000, "23": 1765000, "29": 1507000, "35": 1343000, "47": 1147000}, "tag": "DAFTAR HARGA"},
+  "m25": {"model": "VARIO EVO 160 ABS MZ0B", "otr": 33360000, "dp": 2200000, "angsuran": {"11": 3430000, "17": 2402000, "23": 1917000, "29": 1637000, "35": 1458000, "47": 1245000}, "tag": "DAFTAR HARGA"},
+  "m26": {"model": "STYLO 160 CBS MF1D", "otr": 31520000, "dp": 2800000, "angsuran": {"11": 3271000, "17": 2296000, "23": 1836000, "29": 1570000, "35": 1400000, "47": 1198000}, "tag": "DAFTAR HARGA"},
+  "m27": {"model": "STYLO 160 ABS MG1D", "otr": 34580000, "dp": 3100000, "angsuran": {"11": 3567000, "17": 2503000, "23": 2000000, "29": 1711000, "35": 1525000, "47": 1305000}, "tag": "DAFTAR HARGA"},
+  "m28": {"model": "STYLO 160 ABS SPC MGAD", "otr": 36180000, "dp": 3300000, "angsuran": {"11": 3732000, "17": 2620000, "23": 2095000, "29": 1793000, "35": 1599000, "47": 1369000}, "tag": "DAFTAR HARGA"},
+  "m29": {"model": "PCX 160 CBS MT1A", "otr": 36640000, "dp": 2400000, "angsuran": {"11": 3763000, "17": 2636000, "23": 2099000, "29": 1792000, "35": 1596000, "47": 1362000}, "tag": "DAFTAR HARGA"},
+  "m30": {"model": "PCX 160 ABS MV1A", "otr": 40380000, "dp": 2800000, "angsuran": {"11": 4121000, "17": 2887000, "23": 2299000, "29": 1963000, "35": 1747000, "47": 1492000}, "tag": "DAFTAR HARGA"},
+  "m31": {"model": "PCX 160 ABS Roadsync MW1A", "otr": 43540000, "dp": 3100000, "angsuran": {"11": 4449000, "17": 3123000, "23": 2490000, "29": 2130000, "35": 1900000, "47": 1626000}, "tag": "DAFTAR HARGA"},
+  "m32": {"model": "ADV 160 CBS NA0", "otr": 38830000, "dp": 2600000, "angsuran": {"11": 3971000, "17": 2780000, "23": 2212000, "29": 1888000, "35": 1680000, "47": 1433000}, "tag": "DAFTAR HARGA"},
+  "m33": {"model": "ADV 160 ABS NB0", "otr": 41950000, "dp": 2900000, "angsuran": {"11": 4274000, "17": 2992000, "23": 2381000, "29": 2032000, "35": 1808000, "47": 1542000}, "tag": "DAFTAR HARGA"},
+  "m34": {"model": "ADV 160 ABS Roadsync NC0", "otr": 43720000, "dp": 3100000, "angsuran": {"11": 4442000, "17": 3109000, "23": 2474000, "29": 2112000, "35": 1879000, "47": 1603000}, "tag": "DAFTAR HARGA"},
+  "m35": {"model": "CB150 Verza SW KF0", "otr": 25920000, "dp": 1400000, "angsuran": {"11": 2698000, "17": 1883000, "23": 1498000, "29": 1276000, "35": 1133000, "47": 963000}, "tag": "DAFTAR HARGA"},
+  "m36": {"model": "CB150 Verza CW KG0", "otr": 26580000, "dp": 1500000, "angsuran": {"11": 2758000, "17": 1925000, "23": 1531000, "29": 1304000, "35": 1158000, "47": 984000}, "tag": "DAFTAR HARGA"},
+  "m37": {"model": "SONIC 150R HD7", "otr": 29690000, "dp": 1500000, "angsuran": {"11": 3067000, "17": 2140000, "23": 1703000, "29": 1450000, "35": 1288000, "47": 1094000}, "tag": "DAFTAR HARGA"},
+  "m38": {"model": "SONIC 150R HRR HDN HDP", "otr": 30100000, "dp": 1600000, "angsuran": {"11": 3100000, "17": 2164000, "23": 1721000, "29": 1466000, "35": 1302000, "47": 1106000}, "tag": "DAFTAR HARGA"},
+  "m39": {"model": "CB150R Streetfire JR0", "otr": 36170000, "dp": 2200000, "angsuran": {"11": 3682000, "17": 2570000, "23": 2044000, "29": 1741000, "35": 1546000, "47": 1313000}, "tag": "DAFTAR HARGA"},
+  "m40": {"model": "CB150R Streetfire SE JS0", "otr": 37180000, "dp": 2300000, "angsuran": {"11": 3779000, "17": 2637000, "23": 2098000, "29": 1786000, "35": 1586000, "47": 1348000}, "tag": "DAFTAR HARGA"},
+  "m41": {"model": "CB 150 X Std JX0", "otr": 36050000, "dp": 2200000, "angsuran": {"11": 3670000, "17": 2560000, "23": 2037000, "29": 1735000, "35": 1540000, "47": 1309000}, "tag": "DAFTAR HARGA"},
+  "m42": {"model": "CB 150 X SE JXA", "otr": 36560000, "dp": 2200000, "angsuran": {"11": 3724000, "17": 2598000, "23": 2067000, "29": 1760000, "35": 1563000, "47": 1328000}, "tag": "DAFTAR HARGA"},
+  "m43": {"model": "CRF150L ES7A ESKA ESLA", "otr": 40900000, "dp": 2600000, "angsuran": {"11": 4162000, "17": 2911000, "23": 2310000, "29": 1969000, "35": 1750000, "47": 1477000}, "tag": "DAFTAR HARGA"},
+  "m44": {"model": "CBR 150 STD JMM / JM1", "otr": 40510000, "dp": 2600000, "angsuran": {"11": 4111000, "17": 2872000, "23": 2277000, "29": 1939000, "35": 1721000, "47": 1463000}, "tag": "DAFTAR HARGA"},
+  "m45": {"model": "CBR 150 STD JM2 JML / JMG JMH", "otr": 41220000, "dp": 2700000, "angsuran": {"11": 4176000, "17": 2917000, "23": 2313000, "29": 1969000, "35": 1749000, "47": 1486000}, "tag": "DAFTAR HARGA"},
+  "m46": {"model": "CBR 150 ABS KEA", "otr": 44780000, "dp": 3000000, "angsuran": {"11": 4523000, "17": 3160000, "23": 2505000, "29": 2133000, "35": 1894000, "47": 1609000}, "tag": "DAFTAR HARGA"},
+  "m47": {"model": "CBR 150 ABS KE0", "otr": 45490000, "dp": 3100000, "angsuran": {"11": 4589000, "17": 3205000, "23": 2541000, "29": 2164000, "35": 1921000, "47": 1632000}, "tag": "DAFTAR HARGA"},
+  "m48": {"model": "CBR250RR STD KA0", "otr": 76870000, "dp": 5200000, "angsuran": {"11": 7587000, "17": 5293000, "23": 4216000, "29": 3590000, "35": 3187000, "47": 2707000}, "tag": "DAFTAR HARGA"},
+  "m49": {"model": "CBR250RR STD KAA", "otr": 81240000, "dp": 5700000, "angsuran": {"11": 8095000, "17": 5671000, "23": 4515000, "29": 3840000, "35": 3419000, "47": 2910000}, "tag": "DAFTAR HARGA"},
+  "m50": {"model": "CBR250RR ABS KB0", "otr": 88760000, "dp": 6400000, "angsuran": {"11": 8827000, "17": 6184000, "23": 4923000, "29": 4186000, "35": 3727000, "47": 3173000}, "tag": "DAFTAR HARGA"},
+  "m51": {"model": "CBR250RR ABSQS KC0", "otr": 92810000, "dp": 6800000, "angsuran": {"11": 9219000, "17": 6459000, "23": 5141000, "29": 4371000, "35": 3892000, "47": 3313000}, "tag": "DAFTAR HARGA"},
+  "m52": {"model": "CBR250RR ABSQS KCA KCB", "otr": 93410000, "dp": 6900000, "angsuran": {"11": 9273000, "17": 6496000, "23": 5171000, "29": 4397000, "35": 3915000, "47": 3332000}, "tag": "DAFTAR HARGA"},
+  "m53": {"model": "Supercub C125 AM1 AMB", "otr": 82430000, "dp": 8212000, "angsuran": {"11": 5753000, "17": 4580000, "23": 3895000, "29": 3468000, "35": 2952000}, "tag": "DAFTAR HARGA"},
+  "m54": {"model": "CRF250L JTB", "otr": 96530000, "dp": 9588000, "angsuran": {"11": 6722000, "17": 5353000, "23": 4554000, "29": 4057000, "35": 3456000}, "tag": "DAFTAR HARGA"},
+  "m55": {"model": "CT125AM AZ0", "otr": 84690000, "dp": 8433000, "angsuran": {"11": 5908000, "17": 4703000, "23": 4000000, "29": 3561000, "35": 3031000}, "tag": "DAFTAR HARGA"},
+  "m56": {"model": "DAX ST125 DX JZ1", "otr": 85350000, "dp": 8493000, "angsuran": {"11": 5950000, "17": 4737000, "23": 4028000, "29": 3587000, "35": 3053000}, "tag": "DAFTAR HARGA"},
+  "m57": {"model": "MONKEY Z125 JY1", "otr": 90000000, "dp": 8950000, "angsuran": {"11": 6270000, "17": 4991000, "23": 4244000, "29": 3779000, "35": 3217000}, "tag": "DAFTAR HARGA"},
+  "m58": {"model": "FORZA FB2", "otr": 101260000, "dp": 10043000, "angsuran": {"11": 7040000, "17": 5607000, "23": 4769000, "29": 4248000, "35": 3620000}, "tag": "DAFTAR HARGA"},
+  "m59": {"model": "CRF250 RALLY JT2", "otr": 101780000, "dp": 10099000, "angsuran": {"11": 7080000, "17": 5638000, "23": 4796000, "29": 4272000, "35": 3640000}, "tag": "DAFTAR HARGA"},
+  "m60": {"model": "EM1 :e ME0A CHARGER", "otr": 46121000, "dp": 4699000, "angsuran": {"11": 3293000, "17": 2624000, "23": 2234000, "29": 1991000, "35": 1694000}, "tag": "DAFTAR HARGA"},
+  "m61": {"model": "EM1 :e PLUS MH0A CHARGER", "otr": 46621000, "dp": 4753000, "angsuran": {"11": 3330000, "17": 2654000, "23": 2259000, "29": 2014000, "35": 1713000}, "tag": "DAFTAR HARGA"},
+  "m62": {"model": "ICON e: MX0", "otr": 28147000, "dp": 2966000, "angsuran": {"11": 2080000, "17": 1661000, "23": 1417000, "29": 1265000, "35": 1076000}, "tag": "DAFTAR HARGA"},
+  "m63": {"model": "CUV e: MN0", "otr": 54693000, "dp": 5541000, "angsuran": {"11": 3885000, "17": 3096000, "23": 2636000, "29": 2351000, "35": 2001000}, "tag": "DAFTAR HARGA"},
+  "m64": {"model": "CUV e: Roadsync Duo MP0", "otr": 59893000, "dp": 6046000, "angsuran": {"11": 4239000, "17": 3378000, "23": 2876000, "29": 2564000, "35": 2183000}, "tag": "DAFTAR HARGA"},
 };
+var catalogSearch=document.getElementById('catalogSearch');
 var catalogSelect=document.getElementById('catalogSelect');
+var catalogResults=document.getElementById('catalogSearchResults');
+var originalCatalogOptions=Array.prototype.slice.call(catalogSelect.options).map(function(option){return {value:option.value,text:option.text};});
+var fmtPrice=function(n){return 'Rp'+Number(n).toLocaleString('id-ID');};
+function showCatalogResults(query){
+  catalogResults.innerHTML='';
+  var q=query.trim().toLocaleLowerCase('id-ID');
+  if(!q){catalogResults.classList.remove('is-visible');return;}
+  var matches=originalCatalogOptions.filter(function(option){return option.value && option.text.toLocaleLowerCase('id-ID').indexOf(q)!==-1;});
+  catalogResults.classList.add('is-visible');
+  var head=document.createElement('div');head.className='search-results-head';head.textContent=matches.length+' hasil ditemukan';catalogResults.appendChild(head);
+  if(!matches.length){var empty=document.createElement('div');empty.className='search-no-result';empty.textContent='Motor tidak ditemukan. Coba kata kunci lain, misalnya BeAT, Scoopy, Vario, atau PCX.';catalogResults.appendChild(empty);return;}
+  matches.slice(0,10).forEach(function(option){
+    var item=catalogData[option.value];if(!item)return;
+    var button=document.createElement('button');button.type='button';button.className='search-result';button.setAttribute('role','option');
+    var name=document.createElement('span');name.className='search-result-name';name.textContent=item.model;
+    var price=document.createElement('span');price.className='search-result-price';price.textContent=fmtPrice(item.otr);
+    button.appendChild(name);button.appendChild(price);
+    button.addEventListener('click',function(){catalogSelect.value=option.value;catalogSelect.dispatchEvent(new Event('change'));catalogSearch.value=item.model;catalogResults.classList.remove('is-visible');});
+    catalogResults.appendChild(button);
+  });
+  if(matches.length>10){var more=document.createElement('div');more.className='search-results-head';more.textContent='Menampilkan 10 hasil teratas. Tambahkan kata kunci agar lebih spesifik.';catalogResults.appendChild(more);}
+}
+catalogSearch.addEventListener('input',function(){
+  var query=this.value.trim().toLocaleLowerCase('id-ID');
+  var current=catalogSelect.value;
+  catalogSelect.innerHTML='';
+  originalCatalogOptions.forEach(function(option,index){
+    if(index===0 || !query || option.text.toLocaleLowerCase('id-ID').indexOf(query)!==-1){
+      var node=document.createElement('option');node.value=option.value;node.textContent=option.text;catalogSelect.appendChild(node);
+    }
+  });
+  if(current && Array.prototype.some.call(catalogSelect.options,function(option){return option.value===current;}))catalogSelect.value=current;
+  else catalogSelect.value='';
+  showCatalogResults(this.value);
+});
+catalogSearch.addEventListener('keydown',function(e){if(e.key==='Escape'){catalogResults.classList.remove('is-visible');}});
+document.addEventListener('click',function(e){if(!catalogResults.contains(e.target)&&e.target!==catalogSearch)catalogResults.classList.remove('is-visible');});
+
 var catalogDetail=document.getElementById('catalogDetail');
 var catalogSim=document.getElementById('catalogSim');
 catalogSelect.addEventListener('change',function(){
   var item=catalogData[this.value];
   if(!item){
-    catalogDetail.innerHTML='<h3>Katalog motor Honda</h3><p>Pilih model di menu atas untuk membaca deskripsi singkat dan lanjut ke simulasi.</p>';
+    catalogDetail.innerHTML='<h3>Katalog motor Honda</h3><p>Pilih model di menu atas untuk melihat harga dan contoh angsuran.</p>';
     catalogSim.textContent='Pilih motor untuk simulasi';
     return;
   }
-  catalogDetail.innerHTML='<span class="tag">'+item[1]+'</span><h3>'+item[0]+'</h3><p>'+item[2]+'</p>';
-  catalogSim.textContent='Simulasi '+item[0]+' →';
+  var fmt=function(n){return 'Rp'+Number(n).toLocaleString('id-ID');};
+  var rows='';
+  [11,17,23,29,35,47].forEach(function(tenor){
+    if(item.angsuran[String(tenor)]){
+      rows+='<tr><td>'+tenor+' bulan</td><td>'+fmt(item.angsuran[String(tenor)])+'/bln</td></tr>';
+    }
+  });
+  catalogDetail.innerHTML=
+    '<span class="tag">DAFTAR HARGA</span>'+
+    '<h3>'+item.model+'</h3>'+
+    '<div class="price-summary">'+
+      '<div class="price-item"><span>Harga OTR</span><strong>'+fmt(item.otr)+'</strong></div>'+
+      '<div class="price-item"><span>Contoh DP bayar</span><strong>'+(item.dp?fmt(item.dp):'Konfirmasi')+'</strong></div>'+
+    '</div>'+
+    '<h4 style="margin:18px 0 8px">Contoh angsuran per tenor</h4>'+
+    '<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-size:14px">'+
+    '<thead><tr><th>Tenor</th><th>Angsuran per bulan</th></tr></thead>'+
+    '<tbody>'+rows+'</tbody></table></div>'+
+    '<p class="small-note">Angka merupakan referensi awal. Konfirmasi harga, promo, DP, tenor, dan ketersediaan unit kepada tim sales sebelum transaksi.</p>';
+  catalogSim.textContent='Simulasi '+item.model+' →';
   var motorSelect=document.getElementById('motor');
-  for(var i=0;i<motorSelect.options.length;i++){if(motorSelect.options[i].text===item[0]){motorSelect.value=item[0];break;}}
+  var existing=false;
+  for(var i=0;i<motorSelect.options.length;i++){
+    if(motorSelect.options[i].text===item.model){motorSelect.value=item.model;existing=true;break;}
+  }
+  if(!existing){
+    var opt=document.createElement('option');
+    opt.text=item.model; opt.value=item.model;
+    motorSelect.add(opt); motorSelect.value=item.model;
+  }
 });
 catalogSim.addEventListener('click',function(e){
   if(!catalogSelect.value){e.preventDefault();catalogSelect.focus();catalogSelect.reportValidity && catalogSelect.reportValidity();return;}
@@ -212,7 +428,7 @@ document.getElementById('simForm').addEventListener('submit',function(e){
   e.preventDefault();
   var val=function(id){return document.getElementById(id).value.trim();};
   var msg=[
-    'Halo Nanda, saya ingin simulasi motor Honda NSS Sragen.',
+    'Halo, saya ingin simulasi motor Honda NSS Sragen.',
     '',
     'Nama: '+val('nama'),
     'Nomor WhatsApp: '+val('hp'),

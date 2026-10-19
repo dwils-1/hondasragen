@@ -69,6 +69,7 @@ footer{padding:26px 0;background:#0d0f14;color:#a8abb5;font-size:12px}.footer-ro
   box-shadow:0 12px 38px #0003; font-family:Arial,sans-serif;
 }
 #honda-chat-panel[hidden] { display:none !important; }
+body.honda-chat-open #honda-chat-toggle { display:none; }
 .honda-chat-header {
   display:flex; align-items:center; gap:10px; padding:14px;
   background:#128C7E; color:#fff;
@@ -537,6 +538,7 @@ document.getElementById('simForm').addEventListener('submit',function(e){
 
   function setChatOpen(open) {
     panel.hidden = !open;
+    document.body.classList.toggle("honda-chat-open", open);
     toggle.setAttribute('aria-expanded', String(open));
     if (open) message.focus();
   }
@@ -556,5 +558,6 @@ document.getElementById('simForm').addEventListener('submit',function(e){
   });
 })();
 </script>
-\n</body>
+
+</body>
 </html>

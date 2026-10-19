@@ -54,7 +54,62 @@ footer{padding:26px 0;background:#0d0f14;color:#a8abb5;font-size:12px}.footer-ro
 .float-wa{position:fixed;right:22px;bottom:22px;z-index:20;display:inline-flex;width:auto;min-width:0;max-width:max-content;padding:11px 16px;box-shadow:0 8px 22px rgba(18,131,74,.24);border-radius:999px;font-size:14px;line-height:1.2;white-space:nowrap}
 @media(max-width:780px){.float-wa{right:16px;bottom:16px;padding:10px 15px;font-size:13px}.hero{padding:52px 0 46px}.hero-grid,.two-col,.contact-grid{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}section{padding:54px 0}.promo-card{max-width:520px}.brand img{width:76px}.nav{align-items:flex-start;flex-direction:column;padding:12px 0;gap:8px}nav{width:100%;gap:8px;overflow-x:auto;flex-wrap:nowrap;padding:4px 0 8px;font-size:13px}nav a{white-space:nowrap;background:#f7f7f8;padding:7px 10px;border-radius:8px}.float-wa{right:12px;bottom:12px}}
 @media(max-width:480px){.float-wa{width:auto!important;right:14px;bottom:14px;padding:10px 14px;font-size:13px}h1{letter-spacing:-1.5px}.btn{width:100%}.actions{display:grid}.panel{padding:18px}form{grid-template-columns:1fr}.field.full{grid-column:auto}.nav{min-height:64px}.price-summary{grid-template-columns:1fr}.catalog-detail{padding:16px}.float-wa{width:auto!important;font-size:13px;padding:10px 14px}}
-</style>
+
+/* Chat box mini Honda Sragen */
+#honda-chat-toggle {
+  position:fixed; right:18px; bottom:18px; z-index:1001;
+  border:0; border-radius:999px; padding:12px 18px;
+  background:#128C7E; color:#fff; font:600 14px inherit;
+  box-shadow:0 5px 18px #0002; cursor:pointer;
+}
+#honda-chat-panel {
+  position:fixed; right:18px; bottom:76px; z-index:1000;
+  width:min(340px, calc(100vw - 28px)); overflow:hidden;
+  border-radius:16px; background:#f0f2f5;
+  box-shadow:0 12px 38px #0003; font-family:Arial,sans-serif;
+}
+#honda-chat-panel[hidden] { display:none !important; }
+.honda-chat-header {
+  display:flex; align-items:center; gap:10px; padding:14px;
+  background:#128C7E; color:#fff;
+}
+.honda-chat-avatar {
+  display:flex; align-items:center; justify-content:center;
+  flex:0 0 38px; height:38px; border-radius:50%;
+  background:#fff; color:#128C7E; font-weight:700;
+}
+.honda-chat-title { flex:1; min-width:0; }
+.honda-chat-title strong { display:block; font-size:13px; line-height:1.4; }
+.honda-chat-title small { display:block; margin-top:3px; font-size:11px; }
+#honda-chat-close {
+  border:0; background:transparent; color:#fff;
+  font-size:25px; cursor:pointer; padding:0 4px;
+}
+.honda-chat-body { padding:14px; }
+.honda-chat-greeting {
+  max-width:90%; padding:11px 12px; margin-bottom:12px;
+  border-radius:4px 12px 12px 12px; background:#fff;
+  color:#252525; font-size:13px; line-height:1.5;
+}
+#honda-chat-form {
+  display:flex; flex-wrap:wrap; gap:8px;
+  padding:8px; border-radius:12px; background:#fff;
+}
+#honda-chat-message {
+  box-sizing:border-box; width:100%; min-height:52px; resize:vertical;
+  border:0; outline:none; background:transparent;
+  font:14px Arial,sans-serif; color:#222;
+}
+.honda-chat-send {
+  margin-left:auto; border:0; border-radius:999px;
+  padding:9px 15px; background:#128C7E; color:#fff;
+  font-weight:600; cursor:pointer;
+}
+@media(max-width:480px) {
+  #honda-chat-toggle { right:14px; bottom:14px; }
+  #honda-chat-panel { right:14px; bottom:70px; }
+}
+\n</style>
     <link rel="icon" type="image/webp" href="/logo/logo-honda.webp">
 </head>
 <body>
@@ -240,7 +295,34 @@ footer{padding:26px 0;background:#0d0f14;color:#a8abb5;font-size:12px}.footer-ro
 </div>
 </main>
 <footer><div class="wrap footer-row"><span>© <span id="year"></span> Honda Sragen • NSS Nusantara Sakti</span><span>Informasi promo dan pembiayaan mengikuti syarat serta ketentuan yang berlaku.</span></div></footer>
-<a class="btn btn-green float-wa" href="https://wa.me/6285119477941?text=Halo%2C%20saya%20ingin%20konsultasi%20motor%20Honda." target="_blank" rel="noopener" aria-label="Chat WhatsApp">WhatsApp</a>
+
+<button type="button" id="honda-chat-toggle" aria-expanded="false"
+        aria-controls="honda-chat-panel">WhatsApp</button>
+
+<div id="honda-chat-panel" role="dialog"
+     aria-label="Chat WhatsApp Honda Sragen" hidden>
+  <div class="honda-chat-header">
+    <div class="honda-chat-avatar">H</div>
+    <div class="honda-chat-title">
+      <strong>Sales Honda Sedang On-line</strong>
+      <small>Siap menerima pesan Anda</small>
+    </div>
+    <button type="button" id="honda-chat-close"
+            aria-label="Tutup chat">×</button>
+  </div>
+  <div class="honda-chat-body">
+    <div class="honda-chat-greeting">
+      Halo! Ada yang bisa kami bantu terkait motor Honda?
+    </div>
+    <form id="honda-chat-form">
+      <textarea id="honda-chat-message" rows="2"
+                placeholder="Tulis pesan di sini..."
+                aria-label="Tulis pesan di sini" required></textarea>
+      <button type="submit" class="honda-chat-send">Kirim ↗</button>
+    </form>
+  </div>
+</div>
+
 <script>
 (function(){
   function pageForHash(hash){
@@ -441,5 +523,37 @@ document.getElementById('simForm').addEventListener('submit',function(e){
   window.open('https://wa.me/6285119477941?text='+encodeURIComponent(msg),'_blank','noopener');
 });
 </script>
-</body>
+
+<script>
+(() => {
+  const toggle = document.getElementById('honda-chat-toggle');
+  const panel = document.getElementById('honda-chat-panel');
+  const close = document.getElementById('honda-chat-close');
+  const form = document.getElementById('honda-chat-form');
+  const message = document.getElementById('honda-chat-message');
+
+  if (!toggle || !panel || !close || !form || !message) return;
+
+  function setChatOpen(open) {
+    panel.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    if (open) message.focus();
+  }
+
+  toggle.addEventListener('click', () => setChatOpen(panel.hidden));
+  close.addEventListener('click', () => {
+    setChatOpen(false);
+    toggle.focus();
+  });
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    const text = message.value.trim();
+    if (!text) return;
+    const url = 'https://wa.me/6285119477941?text=' + encodeURIComponent(text);
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+})();
+</script>
+\n</body>
 </html>
